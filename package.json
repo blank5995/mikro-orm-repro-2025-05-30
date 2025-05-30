@@ -1,0 +1,26 @@
+{
+  "name": "mikro-orm-repro-2025-05-30",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#*": "./src/*",
+    "#config/*": "./*"
+  },
+  "scripts": {
+    "db:pull": "ts-node src/scripts/generate-entities.ts",
+    "db:setup": "ts-node src/scripts/setup-db.ts temp-pgsql-container-2025-05-30",
+    "db:delete": "ts-node src/scripts/delete-db.ts temp-pgsql-container-2025-05-30"
+  },
+  "dependencies": {
+    "@mikro-orm/core": "^6.4.16",
+    "@mikro-orm/postgresql": "^6.4.16",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@types/node": "^22.15.28",
+    "@mikro-orm/entity-generator": "^6.4.16",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.4"
+  }
+}
