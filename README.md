@@ -18,7 +18,7 @@
 
 4. Create the database:
    ```
-   pnpm db:create
+   pnpm db:setup
    ```
    _Starts the database container and initializes the database._
 
