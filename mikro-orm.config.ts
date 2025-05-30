@@ -25,12 +25,13 @@ const mikroOrmConfig = defineConfig(
       esmImport: false,
       onInitialMetadata: (metadata) =>
       {
-        for (const meta of metadata)
+        for (const { props, className, tableName } of metadata)
         {
-          for (const prop of meta.props)
+          for (const prop of props)
           {
-            if (prop.columnTypes.includes('public.db_row_status'))
+            if (prop.columnTypes.includes('db_row_status'))
             {
+              console.log('Found db_row_status column.', { className, tableName });
               prop.type = 'RowStatus';
               prop.runtimeType = 'RowStatus';
               prop.nativeEnumName = 'RowStatus';
